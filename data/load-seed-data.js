@@ -28,7 +28,7 @@ async function run() {
       classes.map(ffclass => {
         return client.query(`
                     INSERT INTO classes (name, cool_factor, base_game, role, owner_id)
-                    VALUES ($1, $2, $3);
+                    VALUES ($1, $2, $3, $4, $5);
                 `,
         [ffclass.name, ffclass.cool_factor, ffclass.base_game, ffclass.role, user.id]);
       })
