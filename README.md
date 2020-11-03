@@ -35,4 +35,4 @@ const authRoutes = createAuthRoutes({
         ).then(result => result.rows[0]);
     }
 });
-```
+```# sql-be-setup
