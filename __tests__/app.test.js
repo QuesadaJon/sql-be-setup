@@ -229,7 +229,7 @@ describe('app routes', () => {
 
     test('should change existing object to send value and return it', async() => {
       const expectation = {
-        id: 19,
+        id: 18,
         name: 'Fancy Pants Mage',
         cool_factor: 1000,
         base_game: false,
@@ -238,7 +238,7 @@ describe('app routes', () => {
       };
 
       const data = await fakeRequest(app)
-        .post('/classes')
+        .put('/classes/18')
         .send({
           name: 'Fancy Pants Mage',
           cool_factor: 1000,
@@ -252,12 +252,12 @@ describe('app routes', () => {
         .expect('Content-Type', /json/)
         .expect(200);
       expect(data.body).toEqual(expectation);
-      expect(allClasses.body.length).toEqual(19);
+      expect(allClasses.body.length).toEqual(18);
     });
 
     test('should remove object from existing body and return nothing', async() =>{
       const data = await fakeRequest(app)
-        .delete('/classes/19');
+        .delete('/classes/17');
         
 
       const allClasses = await fakeRequest(app)
@@ -265,7 +265,7 @@ describe('app routes', () => {
         .expect('Content-Type', /json/)
         .expect(200);
       expect(data.body).toEqual('');
-      expect(allClasses.body.length).toEqual(18);
+      expect(allClasses.body.length).toEqual(17);
     });
 
   });
