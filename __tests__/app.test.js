@@ -31,7 +31,7 @@ describe('app routes', () => {
       return client.end(done);
     });
 
-    test.only('returns classes body', async() => {
+    test('returns classes body', async() => {
 
       const expectation = [
         {
@@ -39,6 +39,7 @@ describe('app routes', () => {
           class: 'Paladin',
           role: 'Tank',
           cool_factor: 4,
+          owner_id: 1,
           base_game: true
         },
         {
@@ -46,6 +47,7 @@ describe('app routes', () => {
           class: 'Warrior',
           role: 'Tank',
           cool_factor: 3,
+          owner_id: 1,
           base_game: true
         },
         {
@@ -53,6 +55,7 @@ describe('app routes', () => {
           class:'Dark Knight',
           role: 'Tank',
           cool_factor: 7,
+          owner_id: 1,
           base_game: false
         },
         {
@@ -60,6 +63,7 @@ describe('app routes', () => {
           class:  'Gunbreaker',
           role:   'Tank',
           cool_factor: 7,
+          owner_id: 1,
           base_game: false
         },
         {
@@ -67,6 +71,7 @@ describe('app routes', () => {
           class:  'Astrologian',
           role:   'Healer',
           cool_factor: 5,
+          owner_id: 1,
           base_game: false
         },
         {
@@ -74,6 +79,7 @@ describe('app routes', () => {
           class:  'Scholar',
           role:   'Healer',
           cool_factor: 2,
+          owner_id: 1,
           base_game: true
         },
         {
@@ -81,6 +87,7 @@ describe('app routes', () => {
           class:  'White Mage',
           role:   'Healer',
           cool_factor: 1,
+          owner_id: 1,
           base_game: true
         },
         {
@@ -88,6 +95,7 @@ describe('app routes', () => {
           class: 'Monk',
           role: 'Melee DPS',
           cool_factor: 8,
+          owner_id: 1,
           base_game: true
         },
         {
@@ -95,6 +103,7 @@ describe('app routes', () => {
           class: 'Dragoon',
           role: 'Melee DPS',
           cool_factor: 9,
+          owner_id: 1,
           base_game: true
         },
         {
@@ -102,6 +111,7 @@ describe('app routes', () => {
           class: 'Ninja',
           role: 'Melee DPS',
           cool_factor: 8,
+          owner_id: 1,
           base_game: true
         },
         {
@@ -109,6 +119,7 @@ describe('app routes', () => {
           class: 'Samurai',
           role: 'Melee DPS',
           cool_factor: 5,
+          owner_id: 1,
           base_game: false
         },
         {
@@ -116,6 +127,7 @@ describe('app routes', () => {
           class: 'Bard',
           role: 'Ranged Physical DPS',
           cool_factor: 10,
+          owner_id: 1,
           base_game: true
         },
         {
@@ -123,6 +135,7 @@ describe('app routes', () => {
           class: 'Machinist',
           role: 'Ranged Physical DPS',
           cool_factor: 8,
+          owner_id: 1,
           base_game: false
         },
         {
@@ -130,6 +143,7 @@ describe('app routes', () => {
           class: 'Dancer',
           role: 'Ranged Physical DPS',
           cool_factor: 8,
+          owner_id: 1,
           base_game: false
         },
         {
@@ -137,6 +151,7 @@ describe('app routes', () => {
           class: 'Black Mage',
           role: 'Ranged Magical DPS',
           cool_factor: 10,
+          owner_id: 1,
           base_game: true
         },
         {
@@ -144,13 +159,15 @@ describe('app routes', () => {
           class: 'Summoner',
           role: 'Ranged Magical DPS',
           cool_factor: 10,
+          owner_id: 1,
           base_game: true
         },
         {
-          id: 18,
+          id: 17,
           class: 'Red Mage',
           role: 'Ranged Magical DPS',
           cool_factor: 10,
+          owner_id: 1,
           base_game: false
         }
       ];
@@ -166,11 +183,11 @@ describe('app routes', () => {
     test('take an id and return that specific class', async() =>{
       const expectation = {
         id: 10,
-        name: 'Ninja',
+        class: 'Ninja',
+        role: 'Melee DPS',
         cool_factor: 8,
-        base_game: true,
-        role_id: 3,
-        owner_id: 1
+        owner_id: 1,
+        base_game: true
       };
 
       const data = await fakeRequest(app)
@@ -185,9 +202,9 @@ describe('app routes', () => {
       const expectation = {
         id: 18,
         name: 'Time Mage',
+        role_id: 6,
         cool_factor: 10,
         base_game: false,
-        role_id: 5,
         owner_id: 1
       };
 
@@ -197,7 +214,7 @@ describe('app routes', () => {
           name: 'Time Mage',
           cool_factor: 10,
           base_game: false,
-          role_id: 5,
+          role_id: 6,
           owner_id: 1
         });
       
@@ -240,7 +257,7 @@ describe('app routes', () => {
 
     test('should remove object from existing body and return nothing', async() =>{
       const data = await fakeRequest(app)
-        .delete('/classes/17');
+        .delete('/classes/18');
         
 
       const allClasses = await fakeRequest(app)
