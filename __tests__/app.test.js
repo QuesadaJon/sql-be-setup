@@ -36,139 +36,139 @@ describe('app routes', () => {
       const expectation = [
         {
           id: 1,
-          name: 'Paladin',
-          cool_factor: 4,
-          base_game: true,
+          class: 'Paladin',
           role: 'Tank',
+          cool_factor: 4,
           owner_id: 1,
+          base_game: true
         },
         {
           id: 2,
-          name: 'Warrior',
-          cool_factor: 3,
-          base_game: true,
+          class: 'Warrior',
           role: 'Tank',
+          cool_factor: 3,
           owner_id: 1,
+          base_game: true
         },
         {
           id: 3,
-          name: 'Dark Knight',
-          cool_factor: 7,
-          base_game: false,
+          class:'Dark Knight',
           role: 'Tank',
+          cool_factor: 7,
           owner_id: 1,
+          base_game: false
         },
         {
           id: 4,
-          name: 'Gunbreaker',
+          class:  'Gunbreaker',
+          role:   'Tank',
           cool_factor: 7,
-          base_game: false,
-          role: 'Tank',
           owner_id: 1,
+          base_game: false
         },
         {
           id: 5,
-          name: 'Astrologian',
+          class:  'Astrologian',
+          role:   'Healer',
           cool_factor: 5,
-          base_game: false,
-          role: 'Healer',
           owner_id: 1,
+          base_game: false
         },
         {
           id: 6,
-          name: 'Scholar',
+          class:  'Scholar',
+          role:   'Healer',
           cool_factor: 2,
-          base_game: true,
-          role: 'Healer',
           owner_id: 1,
+          base_game: true
         },
         {
           id: 7,
-          name: 'White Mage',
+          class:  'White Mage',
+          role:   'Healer',
           cool_factor: 1,
-          base_game: true,
-          role: 'Healer',
           owner_id: 1,
+          base_game: true
         },
         {
           id: 8,
-          name: 'Monk',
-          cool_factor: 8,
-          base_game: true,
+          class: 'Monk',
           role: 'Melee DPS',
+          cool_factor: 8,
           owner_id: 1,
+          base_game: true
         },
         {
           id: 9,
-          name: 'Dragoon',
-          cool_factor: 9,
-          base_game: true,
+          class: 'Dragoon',
           role: 'Melee DPS',
+          cool_factor: 9,
           owner_id: 1,
+          base_game: true
         },
         {
           id: 10,
-          name: 'Ninja',
-          cool_factor: 8,
-          base_game: true,
+          class: 'Ninja',
           role: 'Melee DPS',
+          cool_factor: 8,
           owner_id: 1,
+          base_game: true
         },
         {
           id: 11,
-          name: 'Samurai',
-          cool_factor: 5,
-          base_game: false,
+          class: 'Samurai',
           role: 'Melee DPS',
+          cool_factor: 5,
           owner_id: 1,
+          base_game: false
         },
         {
           id: 12,
-          name: 'Bard',
-          cool_factor: 10,
-          base_game: true,
+          class: 'Bard',
           role: 'Ranged Physical DPS',
+          cool_factor: 10,
           owner_id: 1,
+          base_game: true
         },
         {
           id: 13,
-          name: 'Machinist',
-          cool_factor: 8,
-          base_game: false,
+          class: 'Machinist',
           role: 'Ranged Physical DPS',
+          cool_factor: 8,
           owner_id: 1,
+          base_game: false
         },
         {
           id: 14,
-          name: 'Dancer',
-          cool_factor: 8,
-          base_game: false,
+          class: 'Dancer',
           role: 'Ranged Physical DPS',
+          cool_factor: 8,
           owner_id: 1,
+          base_game: false
         },
         {
           id: 15,
-          name: 'Black Mage',
-          cool_factor: 10,
-          base_game: true,
+          class: 'Black Mage',
           role: 'Ranged Magical DPS',
+          cool_factor: 10,
           owner_id: 1,
+          base_game: true
         },
         {
           id: 16,
-          name: 'Summoner',
-          cool_factor: 10,
-          base_game: true,
+          class: 'Summoner',
           role: 'Ranged Magical DPS',
-          owner_id: 1
+          cool_factor: 10,
+          owner_id: 1,
+          base_game: true
         },
         {
           id: 17,
-          name: 'Red Mage',
-          cool_factor: 10,
-          base_game: false,
+          class: 'Red Mage',
           role: 'Ranged Magical DPS',
-          owner_id: 1
+          cool_factor: 10,
+          owner_id: 1,
+          base_game: false
         }
       ];
 
@@ -183,11 +183,11 @@ describe('app routes', () => {
     test('take an id and return that specific class', async() =>{
       const expectation = {
         id: 10,
-        name: 'Ninja',
-        cool_factor: 8,
-        base_game: true,
+        class: 'Ninja',
         role: 'Melee DPS',
-        owner_id: 1
+        cool_factor: 8,
+        owner_id: 1,
+        base_game: true
       };
 
       const data = await fakeRequest(app)
@@ -202,9 +202,9 @@ describe('app routes', () => {
       const expectation = {
         id: 18,
         name: 'Time Mage',
+        role_id: 6,
         cool_factor: 10,
         base_game: false,
-        role: 'Ranged Magical DPS',
         owner_id: 1
       };
 
@@ -214,7 +214,7 @@ describe('app routes', () => {
           name: 'Time Mage',
           cool_factor: 10,
           base_game: false,
-          role: 'Ranged Magical DPS',
+          role_id: 6,
           owner_id: 1
         });
       
@@ -229,21 +229,21 @@ describe('app routes', () => {
 
     test('should change existing object to send value and return it', async() => {
       const expectation = {
-        id: 19,
+        id: 18,
         name: 'Fancy Pants Mage',
         cool_factor: 1000,
         base_game: false,
-        role: 'Ungodly OP carry',
+        role_id: 6,
         owner_id: 1
       };
 
       const data = await fakeRequest(app)
-        .post('/classes')
+        .put('/classes/18')
         .send({
           name: 'Fancy Pants Mage',
           cool_factor: 1000,
           base_game: false,
-          role: 'Ungodly OP carry',
+          role_id: 6,
           owner_id: 1
         });
 
@@ -252,12 +252,12 @@ describe('app routes', () => {
         .expect('Content-Type', /json/)
         .expect(200);
       expect(data.body).toEqual(expectation);
-      expect(allClasses.body.length).toEqual(19);
+      expect(allClasses.body.length).toEqual(18);
     });
 
     test('should remove object from existing body and return nothing', async() =>{
       const data = await fakeRequest(app)
-        .delete('/classes/19');
+        .delete('/classes/18');
         
 
       const allClasses = await fakeRequest(app)
@@ -265,7 +265,44 @@ describe('app routes', () => {
         .expect('Content-Type', /json/)
         .expect(200);
       expect(data.body).toEqual('');
-      expect(allClasses.body.length).toEqual(18);
+      expect(allClasses.body.length).toEqual(17);
+    });
+
+    test('get should only return roles table', async() =>{
+      const expectation = [
+        {
+          id: 1,
+          name: 'Tank'
+        },
+        {
+          id: 2,
+          name: 'Healer'
+        },
+        {
+          id: 3,
+          name: 'Melee DPS'
+        },
+        {
+          id: 4,
+          name: 'Ranged Physical DPS'
+        },
+        {
+          id: 5,
+          name: 'Ranged Magical DPS'
+        },
+        {
+          id: 6,
+          name: 'Ungodly OP Carry'
+        }
+      ];
+
+      const data = await fakeRequest(app)
+        .get('/roles')
+        .expect('Content-Type', /json/)
+        .expect(200);
+
+      expect(data.body).toEqual(expectation);
+
     });
 
   });
