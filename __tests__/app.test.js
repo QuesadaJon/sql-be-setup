@@ -268,5 +268,42 @@ describe('app routes', () => {
       expect(allClasses.body.length).toEqual(17);
     });
 
+    test('get should only return roles table', async() =>{
+      const expectation = [
+        {
+          id: 1,
+          name: 'Tank'
+        },
+        {
+          id: 2,
+          name: 'Healer'
+        },
+        {
+          id: 3,
+          name: 'Melee DPS'
+        },
+        {
+          id: 4,
+          name: 'Ranged Physical DPS'
+        },
+        {
+          id: 5,
+          name: 'Ranged Magical DPS'
+        },
+        {
+          id: 6,
+          name: 'Ungodly OP Carry'
+        }
+      ];
+
+      const data = await fakeRequest(app)
+        .get('/roles')
+        .expect('Content-Type', /json/)
+        .expect(200);
+
+      expect(data.body).toEqual(expectation);
+
+    });
+
   });
 });
