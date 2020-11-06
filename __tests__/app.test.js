@@ -31,144 +31,127 @@ describe('app routes', () => {
       return client.end(done);
     });
 
-    test('returns classes body', async() => {
+    test.only('returns classes body', async() => {
 
       const expectation = [
         {
           id: 1,
-          name: 'Paladin',
+          class: 'Paladin',
+          role: 'Tank',
           cool_factor: 4,
-          base_game: true,
-          role_id: 1,
-          owner_id: 1,
+          base_game: true
         },
         {
           id: 2,
-          name: 'Warrior',
+          class: 'Warrior',
+          role: 'Tank',
           cool_factor: 3,
-          base_game: true,
-          role_id: 1,
-          owner_id: 1,
+          base_game: true
         },
         {
           id: 3,
-          name: 'Dark Knight',
+          class:'Dark Knight',
+          role: 'Tank',
           cool_factor: 7,
-          base_game: false,
-          role_id: 1,
-          owner_id: 1,
+          base_game: false
         },
         {
           id: 4,
-          name: 'Gunbreaker',
+          class:  'Gunbreaker',
+          role:   'Tank',
           cool_factor: 7,
-          base_game: false,
-          role_id: 1,
-          owner_id: 1,
+          base_game: false
         },
         {
           id: 5,
-          name: 'Astrologian',
+          class:  'Astrologian',
+          role:   'Healer',
           cool_factor: 5,
-          base_game: false,
-          role_id: 2,
-          owner_id: 1,
+          base_game: false
         },
         {
           id: 6,
-          name: 'Scholar',
+          class:  'Scholar',
+          role:   'Healer',
           cool_factor: 2,
-          base_game: true,
-          role_id: 2,
-          owner_id: 1,
+          base_game: true
         },
         {
           id: 7,
-          name: 'White Mage',
+          class:  'White Mage',
+          role:   'Healer',
           cool_factor: 1,
-          base_game: true,
-          role_id: 2,
-          owner_id: 1,
+          base_game: true
         },
         {
           id: 8,
-          name: 'Monk',
+          class: 'Monk',
+          role: 'Melee DPS',
           cool_factor: 8,
-          base_game: true,
-          role_id: 3,
-          owner_id: 1,
+          base_game: true
         },
         {
           id: 9,
-          name: 'Dragoon',
+          class: 'Dragoon',
+          role: 'Melee DPS',
           cool_factor: 9,
-          base_game: true,
-          role_id: 3,
-          owner_id: 1,
+          base_game: true
         },
         {
           id: 10,
-          name: 'Ninja',
+          class: 'Ninja',
+          role: 'Melee DPS',
           cool_factor: 8,
-          base_game: true,
-          role_id: 3,
-          owner_id: 1,
+          base_game: true
         },
         {
           id: 11,
-          name: 'Samurai',
+          class: 'Samurai',
+          role: 'Melee DPS',
           cool_factor: 5,
-          base_game: false,
-          role_id: 3,
-          owner_id: 1,
+          base_game: false
         },
         {
           id: 12,
-          name: 'Bard',
+          class: 'Bard',
+          role: 'Ranged Physical DPS',
           cool_factor: 10,
-          base_game: true,
-          role_id: 4,
-          owner_id: 1,
+          base_game: true
         },
         {
           id: 13,
-          name: 'Machinist',
+          class: 'Machinist',
+          role: 'Ranged Physical DPS',
           cool_factor: 8,
-          base_game: false,
-          role_id: 4,
-          owner_id: 1,
+          base_game: false
         },
         {
           id: 14,
-          name: 'Dancer',
+          class: 'Dancer',
+          role: 'Ranged Physical DPS',
           cool_factor: 8,
-          base_game: false,
-          role_id: 4,
-          owner_id: 1,
+          base_game: false
         },
         {
           id: 15,
-          name: 'Black Mage',
+          class: 'Black Mage',
+          role: 'Ranged Magical DPS',
           cool_factor: 10,
-          base_game: true,
-          role_id: 5,
-          owner_id: 1,
+          base_game: true
         },
         {
           id: 16,
-          name: 'Summoner',
+          class: 'Summoner',
+          role: 'Ranged Magical DPS',
           cool_factor: 10,
-          base_game: true,
-          role_id: 5,
-          owner_id: 1
+          base_game: true
         },
         {
-          id: 17,
-          name: 'Red Mage',
+          id: 18,
+          class: 'Red Mage',
+          role: 'Ranged Magical DPS',
           cool_factor: 10,
-          base_game: false,
-          role_id: 5,
-          owner_id: 1
+          base_game: false
         }
       ];
 
