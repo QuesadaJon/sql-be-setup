@@ -39,7 +39,7 @@ describe('app routes', () => {
           name: 'Paladin',
           cool_factor: 4,
           base_game: true,
-          role: 'Tank',
+          role_id: 1,
           owner_id: 1,
         },
         {
@@ -47,7 +47,7 @@ describe('app routes', () => {
           name: 'Warrior',
           cool_factor: 3,
           base_game: true,
-          role: 'Tank',
+          role_id: 1,
           owner_id: 1,
         },
         {
@@ -55,7 +55,7 @@ describe('app routes', () => {
           name: 'Dark Knight',
           cool_factor: 7,
           base_game: false,
-          role: 'Tank',
+          role_id: 1,
           owner_id: 1,
         },
         {
@@ -63,7 +63,7 @@ describe('app routes', () => {
           name: 'Gunbreaker',
           cool_factor: 7,
           base_game: false,
-          role: 'Tank',
+          role_id: 1,
           owner_id: 1,
         },
         {
@@ -71,7 +71,7 @@ describe('app routes', () => {
           name: 'Astrologian',
           cool_factor: 5,
           base_game: false,
-          role: 'Healer',
+          role_id: 2,
           owner_id: 1,
         },
         {
@@ -79,7 +79,7 @@ describe('app routes', () => {
           name: 'Scholar',
           cool_factor: 2,
           base_game: true,
-          role: 'Healer',
+          role_id: 2,
           owner_id: 1,
         },
         {
@@ -87,7 +87,7 @@ describe('app routes', () => {
           name: 'White Mage',
           cool_factor: 1,
           base_game: true,
-          role: 'Healer',
+          role_id: 2,
           owner_id: 1,
         },
         {
@@ -95,7 +95,7 @@ describe('app routes', () => {
           name: 'Monk',
           cool_factor: 8,
           base_game: true,
-          role: 'Melee DPS',
+          role_id: 3,
           owner_id: 1,
         },
         {
@@ -103,7 +103,7 @@ describe('app routes', () => {
           name: 'Dragoon',
           cool_factor: 9,
           base_game: true,
-          role: 'Melee DPS',
+          role_id: 3,
           owner_id: 1,
         },
         {
@@ -111,7 +111,7 @@ describe('app routes', () => {
           name: 'Ninja',
           cool_factor: 8,
           base_game: true,
-          role: 'Melee DPS',
+          role_id: 3,
           owner_id: 1,
         },
         {
@@ -119,7 +119,7 @@ describe('app routes', () => {
           name: 'Samurai',
           cool_factor: 5,
           base_game: false,
-          role: 'Melee DPS',
+          role_id: 3,
           owner_id: 1,
         },
         {
@@ -127,7 +127,7 @@ describe('app routes', () => {
           name: 'Bard',
           cool_factor: 10,
           base_game: true,
-          role: 'Ranged Physical DPS',
+          role_id: 4,
           owner_id: 1,
         },
         {
@@ -135,7 +135,7 @@ describe('app routes', () => {
           name: 'Machinist',
           cool_factor: 8,
           base_game: false,
-          role: 'Ranged Physical DPS',
+          role_id: 4,
           owner_id: 1,
         },
         {
@@ -143,7 +143,7 @@ describe('app routes', () => {
           name: 'Dancer',
           cool_factor: 8,
           base_game: false,
-          role: 'Ranged Physical DPS',
+          role_id: 4,
           owner_id: 1,
         },
         {
@@ -151,7 +151,7 @@ describe('app routes', () => {
           name: 'Black Mage',
           cool_factor: 10,
           base_game: true,
-          role: 'Ranged Magical DPS',
+          role_id: 5,
           owner_id: 1,
         },
         {
@@ -159,7 +159,7 @@ describe('app routes', () => {
           name: 'Summoner',
           cool_factor: 10,
           base_game: true,
-          role: 'Ranged Magical DPS',
+          role_id: 5,
           owner_id: 1
         },
         {
@@ -167,7 +167,7 @@ describe('app routes', () => {
           name: 'Red Mage',
           cool_factor: 10,
           base_game: false,
-          role: 'Ranged Magical DPS',
+          role_id: 5,
           owner_id: 1
         }
       ];
@@ -186,7 +186,7 @@ describe('app routes', () => {
         name: 'Ninja',
         cool_factor: 8,
         base_game: true,
-        role: 'Melee DPS',
+        role_id: 3,
         owner_id: 1
       };
 
@@ -204,7 +204,7 @@ describe('app routes', () => {
         name: 'Time Mage',
         cool_factor: 10,
         base_game: false,
-        role: 'Ranged Magical DPS',
+        role_id: 5,
         owner_id: 1
       };
 
@@ -214,7 +214,7 @@ describe('app routes', () => {
           name: 'Time Mage',
           cool_factor: 10,
           base_game: false,
-          role: 'Ranged Magical DPS',
+          role_id: 5,
           owner_id: 1
         });
       
@@ -233,7 +233,7 @@ describe('app routes', () => {
         name: 'Fancy Pants Mage',
         cool_factor: 1000,
         base_game: false,
-        role: 'Ungodly OP carry',
+        role_id: 6,
         owner_id: 1
       };
 
@@ -243,7 +243,7 @@ describe('app routes', () => {
           name: 'Fancy Pants Mage',
           cool_factor: 1000,
           base_game: false,
-          role: 'Ungodly OP carry',
+          role_id: 6,
           owner_id: 1
         });
 

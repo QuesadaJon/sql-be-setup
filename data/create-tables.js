@@ -19,8 +19,8 @@ async function run() {
                 );           
                 CREATE TABLE roles (
                   id SERIAL PRIMARY KEY NOT NULL,
-                  name VARCHAR(512) NOT NULL,
-                )
+                  name VARCHAR(512) NOT NULL
+                );
                 CREATE TABLE classes (
                   id SERIAL PRIMARY KEY NOT NULL,
                   name VARCHAR(512) NOT NULL,

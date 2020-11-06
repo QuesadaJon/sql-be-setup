@@ -1,6 +1,6 @@
 const client = require('../lib/client');
 // import our seed data:
-const roles = require('.ff-roles.js');
+const roles = require('./ff-roles.js');
 const classes = require('./ff-classes.js');
 const usersData = require('./users.js');
 const { getEmoji } = require('../lib/emoji.js');

@@ -3,7 +3,7 @@ module.exports = [
     name: 'Tank'
   },
   {
-      name: 'Healer'
+    name: 'Healer'
   },
   {
     name: 'Melee DPS'
@@ -13,5 +13,8 @@ module.exports = [
   },
   {
     name: 'Ranged Magical DPS'
+  },
+  {
+    name: 'Ungodly OP Carry'
   }
 ];
